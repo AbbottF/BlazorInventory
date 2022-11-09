@@ -1,0 +1,47 @@
+@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+<div class="column-layout master-view-container">
+    <div class="row-layout group">
+        <IgbNavDrawer Open="true" Position="NavDrawerPosition.Relative" class="nav-drawer" master-view-scope>
+            <IgbNavDrawerItem @onclick="@(e => Navigate(""))">
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        home
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Upload Inventory Sheets</div>
+            </IgbNavDrawerItem>
+            <IgbNavDrawerItem @onclick="@(e => Navigate("update-invetory"))">
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        dns
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Update Inventory</div>
+            </IgbNavDrawerItem>
+            <IgbNavDrawerItem>
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        dashboard
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Results Dashboard</div>
+            </IgbNavDrawerItem>
+        </IgbNavDrawer>
+        <div class="view-container">
+            @Body
+        </div>
+        <div class="row-layout group_1"></div>
+    </div>
+</div>
+
+@code {
+    private void Navigate(string path)
+    {
+        NavigationManager.NavigateTo(path);
+    }
+}

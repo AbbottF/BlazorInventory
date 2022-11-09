@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>KBO_Inventory_Update</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IgniteUI.Blazor" Version="22.2.21" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Shared/MainLayout.razor.css" CssScope="master-view-scope" />
+    <None Update="Pages/UploadInvetorySheets.razor.css" CssScope="upload-invetory-sheets-scope" />
+    <None Update="Pages/UpdateInvetory.razor.css" CssScope="update-invetory-scope" />
+    <None Update="Pages/ResultsDashboard.razor.css" CssScope="results-dashboard-scope" />
+  </ItemGroup>
+</Project>

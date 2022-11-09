@@ -1,0 +1,103 @@
+@page "/results-dashboard"
+@inject Northwind.NorthwindService northwindService
+@inject InventoryDashData.InventoryDashDataService inventoryDashDataService
+@inject SpecialDashData.SpecialDashDataService specialDashDataService
+@inject Financial.FinancialService financialService
+
+<div class="column-layout results-dashboard-container">
+    <div class="column-layout group">
+        <h3 class="h3">
+            Inventory Update Dashboard
+        </h3>
+    </div>
+    <div class="row-layout group_1">
+        <div class="column-layout group_2">
+            <div class="row-layout group_3">
+                <IgbGrid Data="northwindEmployees" PrimaryKey="EmployeeID" DisplayDensity="DisplayDensity.Cosy" AllowFiltering="true" FilterMode="FilterMode.ExcelStyleFilter" AutoGenerate="false" Width="438px" Height="237px" class="ig-typography grid" results-dashboard-scope>
+                    <IgbColumn Field="LastName" DataType="GridColumnDataType.String" Header="lastName" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="FirstName" DataType="GridColumnDataType.String" Header="firstName" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="EmployeeID" DataType="GridColumnDataType.Number" Header="employeeID" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="Title" DataType="GridColumnDataType.String" Header="title" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="TitleOfCourtesy" DataType="GridColumnDataType.String" Header="titleOfCourtesy" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="BirthDate" DataType="GridColumnDataType.Date" Header="birthDate" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="HireDate" DataType="GridColumnDataType.Date" Header="hireDate" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="Address.Street" DataType="GridColumnDataType.String" Header="street" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="Address.City" DataType="GridColumnDataType.String" Header="city" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="Address.Region" DataType="GridColumnDataType.String" Header="region" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="Address.PostalCode" DataType="GridColumnDataType.String" Header="postalCode" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="Address.Country" DataType="GridColumnDataType.String" Header="country" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="Address.Phone" DataType="GridColumnDataType.String" Header="phone" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="ManagerID" DataType="GridColumnDataType.Number" Header="managerID" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="Notes" DataType="GridColumnDataType.String" Header="notes" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="AvatarUrl" DataType="GridColumnDataType.String" Header="avatarUrl" Sortable="true" Selectable="false"></IgbColumn>
+                </IgbGrid>
+            </div>
+        </div>
+        <div class="row-layout group_4">
+            <IgbGrid Data="northwindEmployees" PrimaryKey="EmployeeID" DisplayDensity="DisplayDensity.Cosy" AllowFiltering="true" FilterMode="FilterMode.ExcelStyleFilter" AutoGenerate="false" Width="438px" Height="237px" class="ig-typography grid" results-dashboard-scope>
+                <IgbColumn Field="LastName" DataType="GridColumnDataType.String" Header="lastName" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="FirstName" DataType="GridColumnDataType.String" Header="firstName" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="EmployeeID" DataType="GridColumnDataType.Number" Header="employeeID" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Title" DataType="GridColumnDataType.String" Header="title" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="TitleOfCourtesy" DataType="GridColumnDataType.String" Header="titleOfCourtesy" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="BirthDate" DataType="GridColumnDataType.Date" Header="birthDate" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="HireDate" DataType="GridColumnDataType.Date" Header="hireDate" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Street" DataType="GridColumnDataType.String" Header="street" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.City" DataType="GridColumnDataType.String" Header="city" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Region" DataType="GridColumnDataType.String" Header="region" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.PostalCode" DataType="GridColumnDataType.String" Header="postalCode" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Country" DataType="GridColumnDataType.String" Header="country" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Phone" DataType="GridColumnDataType.String" Header="phone" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="ManagerID" DataType="GridColumnDataType.Number" Header="managerID" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Notes" DataType="GridColumnDataType.String" Header="notes" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="AvatarUrl" DataType="GridColumnDataType.String" Header="avatarUrl" Sortable="true" Selectable="false"></IgbColumn>
+            </IgbGrid>
+        </div>
+        <div class="row-layout group_5">
+            <IgbGrid Data="northwindEmployees" PrimaryKey="EmployeeID" DisplayDensity="DisplayDensity.Cosy" AllowFiltering="true" FilterMode="FilterMode.ExcelStyleFilter" AutoGenerate="false" Width="438px" Height="237px" class="ig-typography grid" results-dashboard-scope>
+                <IgbColumn Field="LastName" DataType="GridColumnDataType.String" Header="lastName" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="FirstName" DataType="GridColumnDataType.String" Header="firstName" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="EmployeeID" DataType="GridColumnDataType.Number" Header="employeeID" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Title" DataType="GridColumnDataType.String" Header="title" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="TitleOfCourtesy" DataType="GridColumnDataType.String" Header="titleOfCourtesy" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="BirthDate" DataType="GridColumnDataType.Date" Header="birthDate" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="HireDate" DataType="GridColumnDataType.Date" Header="hireDate" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Street" DataType="GridColumnDataType.String" Header="street" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.City" DataType="GridColumnDataType.String" Header="city" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Region" DataType="GridColumnDataType.String" Header="region" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.PostalCode" DataType="GridColumnDataType.String" Header="postalCode" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Country" DataType="GridColumnDataType.String" Header="country" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Phone" DataType="GridColumnDataType.String" Header="phone" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="ManagerID" DataType="GridColumnDataType.Number" Header="managerID" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Notes" DataType="GridColumnDataType.String" Header="notes" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="AvatarUrl" DataType="GridColumnDataType.String" Header="avatarUrl" Sortable="true" Selectable="false"></IgbColumn>
+            </IgbGrid>
+        </div>
+    </div>
+    <div class="row-layout group_6">
+        <div class="row-layout group_7">
+            <IgbPieChart DataSource="inventoryDashDataTable1" LabelsPosition="LabelsPosition.BestFit" LabelMemberPath="Inventory" ValueMemberPath="IQuantity" class="pie-chart" results-dashboard-scope></IgbPieChart>
+        </div>
+        <div class="row-layout group_8">
+            <IgbCategoryChart DataSource="specialDashDataTable1" IncludedProperties="@(new[] { "Scount", "SQuantity" })" ComputedPlotAreaMarginMode="ComputedPlotAreaMarginMode.Series" class="category-chart" results-dashboard-scope></IgbCategoryChart>
+        </div>
+        <div class="row-layout group_9">
+            <IgbCategoryChart DataSource="financialBoxOfficeRevenue" ComputedPlotAreaMarginMode="ComputedPlotAreaMarginMode.Series" class="category-chart" results-dashboard-scope></IgbCategoryChart>
+        </div>
+    </div>
+</div>
+
+@code {
+    private Northwind.EmployeesType[] northwindEmployees = Array.Empty<Northwind.EmployeesType>();
+    private InventoryDashData.Table1Type[] inventoryDashDataTable1 = Array.Empty<InventoryDashData.Table1Type>();
+    private SpecialDashData.Table1Type[] specialDashDataTable1 = Array.Empty<SpecialDashData.Table1Type>();
+    private Financial.BoxOfficeRevenueType[] financialBoxOfficeRevenue = Array.Empty<Financial.BoxOfficeRevenueType>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        northwindEmployees = await this.northwindService.GetEmployees() ?? northwindEmployees;
+        inventoryDashDataTable1 = await this.inventoryDashDataService.GetTable1() ?? inventoryDashDataTable1;
+        specialDashDataTable1 = await this.specialDashDataService.GetTable1() ?? specialDashDataTable1;
+        financialBoxOfficeRevenue = await this.financialService.GetBoxOfficeRevenue() ?? financialBoxOfficeRevenue;
+    }
+}

@@ -1,0 +1,129 @@
+.column-layout {
+    display: flex;
+    flex-direction: column;
+}
+.results-dashboard-container {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    height: 100%;
+}
+.group {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    padding: 16px;
+    height: 89px;
+    min-width: 50px;
+    min-height: 50px;
+}
+.row-layout {
+    display: flex;
+}
+.group_1 {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    padding: 16px;
+    height: 275px;
+    min-width: 50px;
+    min-height: 50px;
+}
+.group_2 {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    width: 476px;
+    min-width: 50px;
+    min-height: 50px;
+}
+.group_3 {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    min-width: 50px;
+    min-height: 50px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.group_4 {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    width: 432px;
+    min-width: 50px;
+    min-height: 50px;
+}
+.group_5 {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    width: 437px;
+    min-width: 50px;
+    min-height: 50px;
+}
+.group_6 {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    padding: 16px;
+    min-width: 50px;
+    min-height: 50px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.group_7 {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    width: 448px;
+    min-width: 50px;
+    min-height: 50px;
+}
+.group_8 {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    width: 464px;
+    min-width: 50px;
+    min-height: 50px;
+}
+.group_9 {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    width: 474px;
+    min-width: 50px;
+    min-height: 50px;
+}
+.h3 {
+    text-align: center;
+    height: max-content;
+    min-width: min-content;
+}
+.grid {
+    min-width: 300px;
+    min-height: 150px;
+}
+.pie-chart {
+    min-width: 250px;
+    min-height: 250px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.category-chart {
+    min-width: 400px;
+    min-height: 300px;
+    flex-grow: 1;
+    flex-basis: 0;
+}

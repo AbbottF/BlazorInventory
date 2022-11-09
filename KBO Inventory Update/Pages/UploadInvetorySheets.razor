@@ -1,0 +1,56 @@
+@page "/"
+@inject NewTitles.NewTitlesService newTitlesService
+
+<div class="row-layout upload-invetory-sheets-container">
+    <div class="column-layout group">
+        <h5 class="h5">
+            View 1
+        </h5>
+        <div class="row-layout group_1">
+            <IgbButton class="button" upload-invetory-sheets-scope>
+                <span class="material-icons">
+                    move_to_inbox
+                </span>
+                <span>Load New Titles</span>
+                <IgbRipple></IgbRipple>
+            </IgbButton>
+            <IgbButton Disabled="true" class="button_1" upload-invetory-sheets-scope>
+                <span class="material-icons">
+                    archive
+                </span>
+                <span>Load Prior Titles</span>
+                <IgbRipple></IgbRipple>
+            </IgbButton>
+        </div>
+        <div class="column-layout group_2">
+            <IgbGrid Data="newTitlesTable1" PrimaryKey="ISBN" DisplayDensity="DisplayDensity.Cosy" AutoGenerate="false" class="ig-typography grid" upload-invetory-sheets-scope>
+                <IgbColumn Field="ISBN" DataType="GridColumnDataType.String" Header="ISBN" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Title" DataType="GridColumnDataType.String" Header="Title" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Author" DataType="GridColumnDataType.String" Header="Author" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Publisher" DataType="GridColumnDataType.String" Header="Publisher" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Category" DataType="GridColumnDataType.String" Header="Category" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Subject" DataType="GridColumnDataType.String" Header="Subject" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Binding" DataType="GridColumnDataType.String" Header="Binding" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="List$USD" DataType="GridColumnDataType.Number" Header="List$USD" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Net$USD" DataType="GridColumnDataType.Number" Header="Net$USD" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="AvaliableQuantity" DataType="GridColumnDataType.Number" Header="AvaliableQuantity" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Blowout" DataType="GridColumnDataType.String" Header="Blowout" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Category2" DataType="GridColumnDataType.String" Header="Category2" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Category3" DataType="GridColumnDataType.String" Header="Category3" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Subject2" DataType="GridColumnDataType.String" Header="Subject2" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Subject3" DataType="GridColumnDataType.String" Header="Subject3" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Age" DataType="GridColumnDataType.String" Header="Age" Filterable="false" Selectable="false"></IgbColumn>
+                <IgbColumn Field="CalendarEvent" DataType="GridColumnDataType.String" Header="CalendarEvent" Filterable="false" Selectable="false"></IgbColumn>
+            </IgbGrid>
+        </div>
+    </div>
+</div>
+
+@code {
+    private NewTitles.Table1Type[] newTitlesTable1 = Array.Empty<NewTitles.Table1Type>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        newTitlesTable1 = await this.newTitlesService.GetTable1() ?? newTitlesTable1;
+    }
+}

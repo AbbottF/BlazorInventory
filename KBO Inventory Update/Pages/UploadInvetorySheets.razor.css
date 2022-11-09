@@ -1,0 +1,66 @@
+.row-layout {
+    display: flex;
+}
+.upload-invetory-sheets-container {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    height: 100%;
+}
+.column-layout {
+    display: flex;
+    flex-direction: column;
+}
+.group {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    padding: 32px;
+    min-width: 50px;
+    min-height: 50px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.group_1 {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    min-width: 50px;
+    min-height: 50px;
+}
+.group_2 {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    height: 764px;
+    min-width: 50px;
+    min-height: 50px;
+}
+.h5 {
+    margin: 0 0 16px;
+    height: max-content;
+    min-width: min-content;
+}
+.button {
+    margin: 30px;
+    width: 181px;
+    height: max-content;
+    min-width: min-content;
+    flex-shrink: 0;
+}
+.button_1 {
+    margin: 30px;
+    width: 158px;
+    height: max-content;
+    min-width: min-content;
+    flex-shrink: 0;
+}
+.grid {
+    min-width: 600px;
+    min-height: 300px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
