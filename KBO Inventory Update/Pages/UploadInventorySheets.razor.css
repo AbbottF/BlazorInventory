@@ -1,45 +1,62 @@
-.column-layout {
+.row-layout {
     display: flex;
-    flex-direction: column;
 }
-.update-invetory-container {
+.upload-inventory-sheets-container {
     justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
     height: 100%;
 }
-.row-layout {
+.column-layout {
     display: flex;
+    flex-direction: column;
 }
 .group {
-    justify-content: center;
+    justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
     position: relative;
-    width: 1445px;
-    height: 94px;
+    padding: 32px;
     min-width: 50px;
     min-height: 50px;
+    flex-grow: 1;
+    flex-basis: 0;
 }
 .group_1 {
     justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
     position: relative;
-    height: 805px;
     min-width: 50px;
     min-height: 50px;
 }
+.group_2 {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    height: 764px;
+    min-width: 50px;
+    min-height: 50px;
+}
+.h5 {
+    margin: 0 0 16px;
+    height: max-content;
+    min-width: min-content;
+}
 .button {
     margin: 30px;
+    width: 181px;
     height: max-content;
     min-width: min-content;
     flex-shrink: 0;
 }
-.checkbox {
-    margin: 39px;
-    width: max-content;
+.button_1 {
+    margin: 30px;
+    width: 158px;
     height: max-content;
+    min-width: min-content;
+    flex-shrink: 0;
 }
 .grid {
     min-width: 600px;

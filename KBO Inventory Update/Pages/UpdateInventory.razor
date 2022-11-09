@@ -1,22 +1,22 @@
-@page "/update-invetory"
+@page "/update-inventory"
 @inject NavigationManager NavigationManager
 @inject NewTitles.NewTitlesService newTitlesService
 
-<div class="column-layout update-invetory-container">
+<div class="column-layout update-inventory-container">
     <div class="row-layout group">
-        <IgbButton @onclick="@(e => Navigate("update-invetory"))" class="button" update-invetory-scope>
+        <IgbButton @onclick="@(e => Navigate("update-invetonry"))" class="button" update-inventory-scope>
             <span class="material-icons">
                 import_contacts
             </span>
             <span>Update Inventory</span>
             <IgbRipple></IgbRipple>
         </IgbButton>
-        <IgbCheckbox LabelPosition="CheckboxBaseLabelPosition.After" class="checkbox" update-invetory-scope>
+        <IgbCheckbox LabelPosition="CheckboxBaseLabelPosition.After" class="checkbox" update-inventory-scope>
             Reset New Arrivals
         </IgbCheckbox>
     </div>
     <div class="column-layout group_1">
-        <IgbGrid Data="newTitlesTable1" PrimaryKey="ISBN" DisplayDensity="DisplayDensity.Cosy" AutoGenerate="false" class="ig-typography grid" update-invetory-scope>
+        <IgbGrid Data="newTitlesTable1" PrimaryKey="ISBN" DisplayDensity="DisplayDensity.Cosy" AutoGenerate="false" class="ig-typography grid" update-inventory-scope>
             <IgbColumn Field="ISBN" DataType="GridColumnDataType.String" Header="ISBN" Filterable="false" Selectable="false"></IgbColumn>
             <IgbColumn Field="Title" DataType="GridColumnDataType.String" Header="Title" Filterable="false" Selectable="false"></IgbColumn>
             <IgbColumn Field="Author" DataType="GridColumnDataType.String" Header="Author" Filterable="false" Selectable="false"></IgbColumn>

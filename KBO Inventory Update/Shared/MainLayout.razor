@@ -13,7 +13,7 @@
                 </span>
                 <div slot="content">Upload Inventory Sheets</div>
             </IgbNavDrawerItem>
-            <IgbNavDrawerItem @onclick="@(e => Navigate("update-invetory"))">
+            <IgbNavDrawerItem Disabled="true" @onclick="@(e => Navigate("update-inventory"))">
                 <span slot="icon">
                     <span class="material-icons icon">
                         dns
@@ -22,7 +22,7 @@
                 </span>
                 <div slot="content">Update Inventory</div>
             </IgbNavDrawerItem>
-            <IgbNavDrawerItem>
+            <IgbNavDrawerItem Disabled="true" @onclick="@(e => Navigate("results-dashboard"))">
                 <span slot="icon">
                     <span class="material-icons icon">
                         dashboard

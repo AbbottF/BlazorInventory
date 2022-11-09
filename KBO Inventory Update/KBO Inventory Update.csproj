@@ -13,8 +13,8 @@
 
   <ItemGroup>
     <None Update="Shared/MainLayout.razor.css" CssScope="master-view-scope" />
-    <None Update="Pages/UploadInvetorySheets.razor.css" CssScope="upload-invetory-sheets-scope" />
-    <None Update="Pages/UpdateInvetory.razor.css" CssScope="update-invetory-scope" />
+    <None Update="Pages\UploadInventorySheets.razor.css" CssScope="upload-inventory-sheets-scope" />
+    <None Update="Pages\UpdateInventory.razor.css" CssScope="update-inventory-scope" />
     <None Update="Pages/ResultsDashboard.razor.css" CssScope="results-dashboard-scope" />
   </ItemGroup>
 </Project>
