@@ -7,6 +7,19 @@
             View 1
         </h5>
         <div class="row-layout group_1">
+            @*https://blazorinputfileextended.community-mall.com/how-to-use/change-buttons*@
+            <InputFileExtended SelectionText="Selected"
+                               ButtonShow="true"
+                               TargetToPostFile="upload/file">
+                <InputContent>
+                    <i class="oi oi-file"></i>
+                    <span>Select New Books</span>
+                </InputContent>
+                <ButtonContent>
+                    <i class="oi oi-cloud-upload"></i>
+                    <span>Upload New Books</span>
+                </ButtonContent>
+            </InputFileExtended>
             <IgbButton class="button" upload-inventory-sheets-scope>
                 <span class="material-icons">
                     move_to_inbox
