@@ -16,8 +16,6 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddHttpClient();
 
-builder.Services.AddFileReaderService(options => options.UseWasmSharedBuffer = true);
-
 builder.Services.AddScoped<NewTitlesService>();
 builder.Services.AddScoped<NorthwindService>();
 builder.Services.AddScoped<InventoryDashDataService>();

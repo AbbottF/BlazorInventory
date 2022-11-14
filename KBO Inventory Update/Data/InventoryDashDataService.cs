@@ -11,12 +11,12 @@ namespace KBO_Inventory_Update.InventoryDashData
             this.http = http;
         }
 
-        public async Task<Table1Type[]?> GetTable1()
+        public async Task<ResultInvType[]?> GetTable1()
         {
             using HttpResponseMessage response = http.GetAsync("https://excel2json.io/api/share/7966e682-e07d-4b37-e679-08dab79fa5b4").Result;
             if (response.IsSuccessStatusCode)
             {
-                return await response.Content.ReadFromJsonAsync<Table1Type[]>().ConfigureAwait(false);
+                return await response.Content.ReadFromJsonAsync<ResultInvType[]>().ConfigureAwait(false);
             }
 
             return null;

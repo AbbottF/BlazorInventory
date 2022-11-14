@@ -4,19 +4,19 @@
 
 <div class="column-layout update-inventory-container">
     <div class="row-layout group">
-        <IgbButton @onclick="@(e => Navigate("update-invetonry"))" class="button" update-inventory-scope>
+        <IgbButton @onclick="UpdateInventpryOnServer" class="button" update-inventory-scope>
             <span class="material-icons">
                 import_contacts
             </span>
             <span>Update Inventory</span>
             <IgbRipple></IgbRipple>
         </IgbButton>
-        <IgbCheckbox LabelPosition="CheckboxBaseLabelPosition.After" class="checkbox" update-inventory-scope>
+        <IgbSwitch class="new_arrivals_switch" update-inventory-scope @ref="resetNewArrivals">
             Reset New Arrivals
-        </IgbCheckbox>
+        </IgbSwitch>
     </div>
     <div class="column-layout group_1">
-        <IgbGrid Data="newTitlesTable1" PrimaryKey="ISBN" DisplayDensity="DisplayDensity.Cosy" AutoGenerate="false" class="ig-typography grid" update-inventory-scope>
+        <IgbGrid Name="iGrid" @ref="iGrid" Data="updateInventoryTable" PrimaryKey="ISBN" DisplayDensity="DisplayDensity.Cosy" AutoGenerate="false" class="ig-typography grid" update-inventory-scope>
             <IgbColumn Field="ISBN" DataType="GridColumnDataType.String" Header="ISBN" Filterable="false" Selectable="false"></IgbColumn>
             <IgbColumn Field="Title" DataType="GridColumnDataType.String" Header="Title" Filterable="false" Selectable="false"></IgbColumn>
             <IgbColumn Field="Author" DataType="GridColumnDataType.String" Header="Author" Filterable="false" Selectable="false"></IgbColumn>
@@ -39,14 +39,54 @@
 </div>
 
 @code {
-    private NewTitles.Table1Type[] newTitlesTable1 = Array.Empty<NewTitles.Table1Type>();
+    private IgbGrid? iGrid;
+    private IgniteUI.Blazor.Controls.IgbSwitch? resetNewArrivals;
+    private NewTitles.BookType[] updateInventoryTable = Array.Empty<NewTitles.BookType>();
 
     protected override async Task OnInitializedAsync()
     {
-        newTitlesTable1 = await this.newTitlesService.GetTable1() ?? newTitlesTable1;
+        updateInventoryTable = await this.newTitlesService.GetTable1() ?? updateInventoryTable;
     }
     private void Navigate(string path)
     {
         NavigationManager.NavigateTo(path);
+    }
+
+    public void UpdateInventpryOnServer(EventArgs e)
+    {
+        if (this.resetNewArrivals.Checked)
+        {
+            // Call Clear new arrivals api
+        }
+        iGrid.SelectAllRows(false);
+        if (iGrid.SelectedRows.Count() == 0)
+        {
+            // we have a problem ... we shouldn't be here
+        }
+        do
+        {
+            var firstRow = iGrid.GetRowByIndex(0);
+            UpdateInventoryItem(firstRow);
+            if (UpdateInventoryItem(firstRow))
+            {
+                iGrid.DeleteRow(firstRow);
+                iGrid.SelectAllRows(false);
+            }
+            else
+            {
+                break;
+            }
+        } while (iGrid.SelectedRows.Count() != 0);
+        if (iGrid.SelectedRows.Count() != 0)
+        {
+            // we have a problem ... we have to message to restart
+        }
+    }
+
+    public bool UpdateInventoryItem(IgbRowType row)
+    {
+        bool anyProblems = true;
+
+        return anyProblems;
     }
 }

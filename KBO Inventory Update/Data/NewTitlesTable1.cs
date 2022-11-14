@@ -1,7 +1,7 @@
 //namespace KBO_Inventory_Update.Data.NewTitles; // Razor won't recognize third level namespace
 namespace KBO_Inventory_Update.NewTitles;
 
-public class Table1Type
+public class BookType
 {
     public string? ISBN { get; set; }
     public string? Title { get; set; }

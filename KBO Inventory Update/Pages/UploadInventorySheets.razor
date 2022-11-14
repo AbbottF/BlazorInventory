@@ -1,11 +1,42 @@
 @page "/"
 @inject NewTitles.NewTitlesService newTitlesService
 
+@*@using Infragistics.Documents.Excel*@
+
 <div class="row-layout upload-inventory-sheets-container">
     <div class="column-layout group">
         <h5 class="h5">
             View 1
         </h5>
+        <div class="row-layout group_1">
+            @*https://blazorinputfileextended.community-mall.com/how-to-use/change-buttons*@
+            <InputFileExtended SelectionText="Selected"
+                               ButtonShow="true"
+                               TargetToPostFile="upload/file">
+                <InputContent>
+                    <i class="oi oi-file"></i>
+                    <span>Select New Books</span>
+                </InputContent>
+                <ButtonContent>
+                    <i class="oi oi-cloud-upload"></i>
+                    <span>Load New Books</span>
+                </ButtonContent>
+            </InputFileExtended>
+            <IgbButton class="button" upload-inventory-sheets-scope>
+                <span class="material-icons">
+                    Upload To Server
+                </span>
+                <span>Load New Titles</span>
+                <IgbRipple></IgbRipple>
+            </IgbButton>
+            <IgbButton Disabled="true" class="button_1" upload-inventory-sheets-scope>
+                <span class="material-icons">
+                    archive
+                </span>
+                <span>Load Prior Titles</span>
+                <IgbRipple></IgbRipple>
+            </IgbButton>
+        </div>
         <div class="row-layout group_1">
             @*https://blazorinputfileextended.community-mall.com/how-to-use/change-buttons*@
             <InputFileExtended SelectionText="Selected"
@@ -36,7 +67,7 @@
             </IgbButton>
         </div>
         <div class="column-layout group_2">
-            <IgbGrid Data="newTitlesTable1" PrimaryKey="ISBN" DisplayDensity="DisplayDensity.Cosy" AutoGenerate="false" class="ig-typography grid" upload-inventory-sheets-scope>
+            <IgbGrid Data="uploadInventoryTable" PrimaryKey="ISBN" DisplayDensity="DisplayDensity.Cosy" AutoGenerate="false" class="ig-typography grid" upload-inventory-sheets-scope>
                 <IgbColumn Field="ISBN" DataType="GridColumnDataType.String" Header="ISBN" Filterable="false" Selectable="false"></IgbColumn>
                 <IgbColumn Field="Title" DataType="GridColumnDataType.String" Header="Title" Filterable="false" Selectable="false"></IgbColumn>
                 <IgbColumn Field="Author" DataType="GridColumnDataType.String" Header="Author" Filterable="false" Selectable="false"></IgbColumn>
@@ -60,10 +91,10 @@
 </div>
 
 @code {
-    private NewTitles.Table1Type[] newTitlesTable1 = Array.Empty<NewTitles.Table1Type>();
+    private NewTitles.BookType[] uploadInventoryTable = Array.Empty<NewTitles.BookType>();
 
     protected override async Task OnInitializedAsync()
     {
-        newTitlesTable1 = await this.newTitlesService.GetTable1() ?? newTitlesTable1;
+        uploadInventoryTable = await this.newTitlesService.GetTable1() ?? uploadInventoryTable;
     }
 }
