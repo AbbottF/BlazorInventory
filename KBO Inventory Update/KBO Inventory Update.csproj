@@ -8,6 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\NewTitlesTable1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\ResultsDashboard.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Pages\ResultsDashboard.razor.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BlazorInputFile" Version="0.2.0" />
     <PackageReference Include="BlazorInputFileExtended" Version="2.4.18" />
     <PackageReference Include="IgniteUI.Blazor" Version="22.2.21" />
@@ -18,7 +30,6 @@
     <None Update="Shared/MainLayout.razor.css" CssScope="master-view-scope" />
     <None Update="Pages\UploadInventorySheets.razor.css" CssScope="upload-inventory-sheets-scope" />
     <None Update="Pages\UpdateInventory.razor.css" CssScope="update-inventory-scope" />
-    <None Update="Pages/ResultsDashboard.razor.css" CssScope="results-dashboard-scope" />
   </ItemGroup>
 
   <ItemGroup>

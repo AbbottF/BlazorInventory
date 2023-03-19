@@ -1,0 +1,282 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "KBO.InventoryApi",
+    "version": "1.0"
+  },
+  "paths": {
+    "/ResetInventoryTickets": {
+      "get": {
+        "tags": [
+          "KBO.InventoryApi"
+        ],
+        "operationId": "ResetInventoryTickets",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/InsertCurrentInventoryTickets": {
+      "post": {
+        "tags": [
+          "KBO.InventoryApi"
+        ],
+        "operationId": "InsertCurrentInventoryTicket",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KboInventoryTicket"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/InsertPriorInventoryTickets": {
+      "post": {
+        "tags": [
+          "KBO.InventoryApi"
+        ],
+        "operationId": "InsertPriorInventoryTickets",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KboInventoryTicket"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/GetInventoryTickets": {
+      "get": {
+        "tags": [
+          "KBO.InventoryApi"
+        ],
+        "operationId": "GetInventoryTickets",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KboInventoryTicket"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AddNewTitle": {
+      "post": {
+        "tags": [
+          "KBO.InventoryApi"
+        ],
+        "operationId": "AddNewTitle",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KboInventoryTicket"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/UpdateTitle": {
+      "post": {
+        "tags": [
+          "KBO.InventoryApi"
+        ],
+        "operationId": "UpdateTitle",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KboInventoryTicket"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/RemoveTitle": {
+      "post": {
+        "tags": [
+          "KBO.InventoryApi"
+        ],
+        "operationId": "RemoveTitle",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KboInventoryTicket"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "KboInventoryTicket": {
+        "type": "object",
+        "properties": {
+          "age": {
+            "type": "string",
+            "nullable": true
+          },
+          "author": {
+            "type": "string",
+            "nullable": true
+          },
+          "avaliableQuantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "binding": {
+            "type": "string",
+            "nullable": true
+          },
+          "blowout": {
+            "type": "string",
+            "nullable": true
+          },
+          "calendarEvent": {
+            "type": "string",
+            "nullable": true
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "category2": {
+            "type": "string",
+            "nullable": true
+          },
+          "category3": {
+            "type": "string",
+            "nullable": true
+          },
+          "jsonData": {
+            "type": "string",
+            "nullable": true
+          },
+          "isbn": {
+            "type": "string",
+            "nullable": true
+          },
+          "listUsd": {
+            "type": "number",
+            "format": "double"
+          },
+          "netUsd": {
+            "type": "number",
+            "format": "double"
+          },
+          "ourSalesPrice": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "publisher": {
+            "type": "string",
+            "nullable": true
+          },
+          "subject": {
+            "type": "string",
+            "nullable": true
+          },
+          "subject2": {
+            "type": "string",
+            "nullable": true
+          },
+          "subject3": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "isCatChangedFlag": {
+            "type": "boolean"
+          },
+          "isNewFlag": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isPriceChangeFlag": {
+            "type": "boolean"
+          },
+          "isPriorFlag": {
+            "type": "boolean"
+          },
+          "isQtyChangedFlag": {
+            "type": "boolean"
+          },
+          "isRemoveFlag": {
+            "type": "boolean"
+          },
+          "createDatetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "processDatetime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

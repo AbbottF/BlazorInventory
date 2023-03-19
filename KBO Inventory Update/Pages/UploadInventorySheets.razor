@@ -1,5 +1,5 @@
 @page "/"
-@inject NewTitles.NewTitlesService newTitlesService
+@inject Data.KboInventoryTicketsService kboInventoryTicketsService
 
 @*@using Infragistics.Documents.Excel*@
 
@@ -91,10 +91,10 @@
 </div>
 
 @code {
-    private NewTitles.BookType[] uploadInventoryTable = Array.Empty<NewTitles.BookType>();
+    private Models.KboInventoryTicket[] uploadInventoryTable = Array.Empty<Models.KboInventoryTicket>();
 
     protected override async Task OnInitializedAsync()
     {
-        uploadInventoryTable = await this.newTitlesService.GetTable1() ?? uploadInventoryTable;
+        uploadInventoryTable = await this.kboInventoryTicketsService.GetTable1() ?? uploadInventoryTable;
     }
 }

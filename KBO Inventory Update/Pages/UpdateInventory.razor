@@ -1,11 +1,11 @@
 @page "/update-inventory"
 @inject NavigationManager NavigationManager
-@inject NewTitles.NewTitlesService newTitlesService
-@using KBO_Inventory_Update.NewTitles
+@inject Data.KboInventoryTicketsService kboInventoryTicketsService
+@using KBO_Inventory_Update.Models
 
 <div class="column-layout update-inventory-container">
     <div class="row-layout group">
-        <IgbButton @onclick="UpdateInventpryOnServer" class="button" update-inventory-scope>
+        <IgbButton @onclick="UpdateInventoryOnServer" class="button" update-inventory-scope>
             <span class="material-icons">
                 import_contacts
             </span>
@@ -35,6 +35,7 @@
             <IgbColumn Field="Subject3" DataType="GridColumnDataType.String" Header="Subject3" Filterable="false" Selectable="false"></IgbColumn>
             <IgbColumn Field="Age" DataType="GridColumnDataType.String" Header="Age" Filterable="false" Selectable="false"></IgbColumn>
             <IgbColumn Field="CalendarEvent" DataType="GridColumnDataType.String" Header="CalendarEvent" Filterable="false" Selectable="false"></IgbColumn>
+            <IgbColumn Field="JsonData" DataType="GridColumnDataType.String" Header="JsonData" Filterable="false" Selectable="false" Hidden="true"></IgbColumn>
         </IgbGrid>
     </div>
 </div>
@@ -42,18 +43,18 @@
 @code {
     private IgbGrid? iGrid;
     private IgniteUI.Blazor.Controls.IgbSwitch? resetNewArrivals;
-    private NewTitles.BookType[] updateInventoryTable = Array.Empty<NewTitles.BookType>();
+    private KboInventoryTicket[] updateInventoryTable = Array.Empty<KboInventoryTicket>();
 
     protected override async Task OnInitializedAsync()
     {
-        updateInventoryTable = await this.newTitlesService.GetTable1() ?? updateInventoryTable;
+        updateInventoryTable = await this.kboInventoryTicketsService.GetTable1() ?? updateInventoryTable;
     }
     private void Navigate(string path)
     {
         NavigationManager.NavigateTo(path);
     }
 
-    public void UpdateInventpryOnServer(EventArgs e)
+    public void UpdateInventoryOnServer(EventArgs e)
     {
         if (this.resetNewArrivals.Checked)
         {
@@ -82,6 +83,11 @@
         {
             // we have a problem ... we have to message to restart
         }
+    }
+
+    internal bool UpdateInventoryItem(IgbRowType ticketRow)
+    {
+        return true;
     }
 
 }

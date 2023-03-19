@@ -3,11 +3,8 @@ using Microsoft.AspNetCore.Components.Web;
 using IgniteUI.Blazor.Controls;
 using KBO_Inventory_Update;
 
-using KBO_Inventory_Update.NewTitles;
-using KBO_Inventory_Update.Northwind;
-using KBO_Inventory_Update.InventoryDashData;
-using KBO_Inventory_Update.SpecialDashData;
-using KBO_Inventory_Update.Financial;
+using KBO_Inventory_Update.Models;
+using KBO_Inventory_Update.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,11 +13,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddHttpClient();
 
-builder.Services.AddScoped<NewTitlesService>();
-builder.Services.AddScoped<NorthwindService>();
-builder.Services.AddScoped<InventoryDashDataService>();
-builder.Services.AddScoped<SpecialDashDataService>();
-builder.Services.AddScoped<FinancialService>();
+builder.Services.AddScoped<KboInventoryTicketsService>();
 RegisterIgniteUI(builder.Services);
 
 void RegisterIgniteUI(IServiceCollection services)
